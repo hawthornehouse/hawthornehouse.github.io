@@ -152,9 +152,9 @@
     text-transform: uppercase; color: var(--ink); font-weight: 700;
   }
 
-  .nav-links { display: flex; align-items: center; gap: 42px; list-style: none; }
+  .nav-links { display: flex; align-items: center; gap: 22px; list-style: none; }
   .nav-links a {
-    font-family: 'Manrope', sans-serif; font-size: 12px; letter-spacing: .1em;
+    font-family: 'Manrope', sans-serif; font-size: 11px; letter-spacing: .07em;
     text-transform: uppercase; font-weight: 600; color: var(--ink-soft);
     text-decoration: none; position: relative; padding: 4px 0;
     transition: color .3s var(--ease);
@@ -166,7 +166,12 @@
   }
   .nav-links a:hover { color: var(--accent-deep); }
   .nav-links a:hover::after { transform: scaleX(1); }
-  .nav-cta { padding: 11px 22px; flex-shrink: 0; }
+  .nav-cta { padding: 10px 18px; flex-shrink: 0; font-size: 11px; }
+  .nav-lang { display: flex; align-items: center; gap: 8px; flex-shrink: 0; }
+  .lang-active { font-family: 'Manrope', sans-serif; font-size: 11px; font-weight: 700; letter-spacing: .12em; color: var(--ink); }
+  .lang-divider { color: var(--rule-strong); font-size: 11px; }
+  .lang-soon { font-family: 'Manrope', sans-serif; font-size: 11px; font-weight: 600; color: var(--muted); display: flex; align-items: center; gap: 5px; cursor: default; }
+  .lang-badge { font-family: 'Manrope', sans-serif; font-size: 9px; font-weight: 700; letter-spacing: .08em; background: var(--accent-soft); color: var(--accent-deep); padding: 2px 6px; border-radius: 100px; }
 
   .menu-toggle {
     display: none; width: 44px; height: 44px;
@@ -340,7 +345,7 @@
   .statement em { color: var(--accent-deep); }
 
   /* ---------- what we offer ---------- */
-  .subj-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; max-width: 920px; margin: 0 auto; }
+  .subj-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; max-width: 1080px; margin: 0 auto; }
   .subj-card {
     background: var(--bg-card); border: 1px solid var(--rule); border-radius: 4px;
     padding: 40px 38px; transition: transform .5s var(--ease), box-shadow .5s var(--ease), border-color .5s var(--ease);
@@ -543,6 +548,22 @@
   .footer-contact a:hover { color: var(--bg); }
   .footer-base { margin-top: 28px; display: flex; justify-content: space-between; flex-wrap: wrap; gap: 10px; font-family: 'Manrope', sans-serif; font-size: 11px; letter-spacing: .06em; color: rgba(245,240,230,.5); }
 
+  /* ---------- whatsapp float ---------- */
+  .wa-float {
+    position: fixed; bottom: 28px; right: 28px; z-index: 150;
+    width: 56px; height: 56px; border-radius: 50%;
+    background: #25D366; color: #fff;
+    display: flex; align-items: center; justify-content: center;
+    box-shadow: 0 4px 20px rgba(37,211,102,0.45);
+    transition: transform .3s var(--ease), box-shadow .3s var(--ease);
+    text-decoration: none;
+    animation: waPop .6s var(--ease) 1.5s both;
+  }
+  .wa-float:hover { transform: scale(1.1); box-shadow: 0 6px 28px rgba(37,211,102,0.6); }
+  .wa-float:active { transform: scale(0.96); }
+  .wa-float svg { width: 30px; height: 30px; }
+  @keyframes waPop { from { opacity: 0; transform: scale(0.5); } to { opacity: 1; transform: scale(1); } }
+
   /* ---------- reveal ---------- */
   .reveal { opacity: 0; transform: translateY(24px); transition: opacity .8s var(--ease), transform .8s var(--ease); will-change: opacity, transform; }
   .reveal.in { opacity: 1; transform: none; }
@@ -553,7 +574,7 @@
   @media (max-width: 860px) {
     :root { --pad: 22px; }
     body { font-size: 17px; }
-    .nav-links, .nav-cta { display: none; }
+    .nav-links, .nav-cta, .nav-lang { display: none; }
     .menu-toggle { display: flex; }
     section { padding: 80px 0; }
     .intro { margin-bottom: 48px; }
@@ -567,7 +588,7 @@
     .hero-mark { padding: 16px 0; width: 100%; }
     .hero-mark + .hero-mark { border-left: none; border-top: 1px solid var(--rule); }
     .hero[data-photo="on"] .hero-mark + .hero-mark { border-color: rgba(245,240,230,0.28); }
-    .subj-grid { grid-template-columns: 1fr; }
+    .subj-grid { grid-template-columns: 1fr; max-width: 100%; }
     .commit-grid { grid-template-columns: 1fr; }
     .checks { grid-template-columns: 1fr; }
     .founders { grid-template-columns: 1fr; }
@@ -610,6 +631,11 @@
       <li><a href="#founders">Founders</a></li>
       <li><a href="#join">Teach With Us</a></li>
     </ul>
+    <div class="nav-lang">
+      <span class="lang-active">EN</span>
+      <span class="lang-divider">|</span>
+      <span class="lang-soon" title="Arabic version coming soon">عربي <span class="lang-badge">قريباً</span></span>
+    </div>
     <a href="#enquire" class="btn nav-cta js-book">Book a consultation <span class="arrow" aria-hidden="true">→</span></a>
     <button class="menu-toggle" id="menuToggle" aria-label="Open menu" aria-expanded="false"><span></span><span></span><span></span></button>
   </div>
@@ -687,6 +713,12 @@
         <p>Specialist teachers for Maths, English and the three Sciences, plus the rest of the curriculum. They know the exam boards, we keep track of the mocks, and confidence comes back where it has slipped.</p>
         <div class="band">Year 10 – Year 11</div>
       </div>
+      <div class="subj-card reveal">
+        <div class="tag">— Core skills</div>
+        <h3>AI Literacy</h3>
+        <p>Understanding how AI works, how to use it responsibly, and how to apply it effectively in academic work. A skill that will matter as much as any subject on their CV.</p>
+        <div class="band">All year groups</div>
+      </div>
     </div>
 
     <div class="subjects reveal">
@@ -695,6 +727,7 @@
         <span class="tag reveal">Maths</span>
         <span class="tag reveal">English</span>
         <span class="tag reveal">Sciences</span>
+        <span class="tag reveal">AI Literacy</span>
       </div>
     </div>
 
@@ -914,6 +947,11 @@
   </div>
 </footer>
 
+<!-- WhatsApp float -->
+<a id="waFloat" href="#" target="_blank" rel="noopener" class="wa-float" aria-label="Chat with us on WhatsApp">
+  <svg viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.46 1.32 4.97L2 22l5.25-1.38a9.9 9.9 0 0 0 4.79 1.22h.004c5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.82 9.82 0 0 0 12.04 2Zm0 1.8c2.16 0 4.19.84 5.72 2.37a8.06 8.06 0 0 1 2.37 5.72c0 4.47-3.64 8.11-8.12 8.11a8.1 8.1 0 0 1-4.13-1.13l-.3-.18-3.12.82.83-3.04-.2-.31a8.05 8.05 0 0 1-1.24-4.29c.01-4.47 3.65-8.11 8.12-8.11Zm-2.6 4.2c-.2 0-.51.07-.78.37-.27.3-1.02.99-1.02 2.42 0 1.43 1.04 2.81 1.18 3 .15.2 2.05 3.13 5 4.39.7.3 1.24.48 1.67.62.7.22 1.34.19 1.84.12.56-.08 1.73-.71 1.97-1.39.24-.68.24-1.27.17-1.39-.07-.12-.27-.2-.56-.34-.3-.15-1.74-.86-2.01-.96-.27-.1-.47-.15-.66.15-.2.3-.76.95-.93 1.15-.17.2-.34.22-.64.07-.3-.15-1.25-.46-2.39-1.47-.88-.79-1.48-1.76-1.65-2.06-.17-.3-.02-.46.13-.61.13-.13.3-.34.45-.51.15-.17.2-.3.3-.5.1-.2.05-.37-.02-.52-.07-.15-.66-1.6-.92-2.18-.24-.58-.49-.5-.66-.51Z"/></svg>
+</a>
+
 <!-- Calendly script -->
 <script src="https://assets.calendly.com/assets/external/widget.js"></script>
 
@@ -933,7 +971,7 @@ const CONFIG = {
 (function () {
   const wa = "https://wa.me/" + CONFIG.whatsapp + "?text=" + encodeURIComponent("Hello Hawthorne House — I'd like to ask about lessons for my child.");
   const mail = "mailto:" + CONFIG.email + "?subject=" + encodeURIComponent("Consultation enquiry");
-  ["waLink", "footWa", "joinWa"].forEach(function (id) { const el = document.getElementById(id); if (el) el.href = wa; });
+  ["waLink", "footWa", "joinWa", "waFloat"].forEach(function (id) { const el = document.getElementById(id); if (el) el.href = wa; });
   const m = document.getElementById("mailLink"); if (m) m.href = mail;
   const apply = document.getElementById("joinApply");
   if (apply) apply.href = "mailto:" + CONFIG.email + "?subject=" + encodeURIComponent("Founding teacher application") + "&body=" + encodeURIComponent("Subject(s) you teach:\nExam boards:\nYears of experience:\nUK training / qualifications:\nCurrently in (city):\n\nA little about you:\n");
