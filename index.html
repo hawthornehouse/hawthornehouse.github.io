@@ -196,7 +196,7 @@
     transition: color .3s var(--ease), padding-left .3s var(--ease);
   }
   .mobile-menu a:hover { color: var(--accent-deep); padding-left: 10px; }
-  .mobile-menu .btn { margin-top: 26px; justify-content: center; font-style: normal; font-family: 'Manrope', sans-serif; font-size: 13px; }
+  .mobile-menu .btn { margin-top: 26px; justify-content: center; font-style: normal; font-family: 'Manrope', sans-serif; font-size: 13px; background: var(--ink); color: var(--bg); border-color: var(--ink); }
 
   /* ---------- hero ---------- */
   .hero {
@@ -535,7 +535,7 @@
   .join-note { display: block; margin-top: 12px; font-family: 'Cormorant Garamond', serif; font-style: italic; font-size: 14px; color: rgba(245,240,230,0.55); }
 
   /* ---------- footer ---------- */
-  footer { background: var(--ink); color: rgba(245,240,230,.7); padding: 56px 0 44px; }
+  footer { background: var(--ink); color: rgba(245,240,230,.7); padding: 56px 0 44px; border-top: 1px solid rgba(245,240,230,.15); }
   .footer-top { display: flex; align-items: center; justify-content: space-between; gap: 28px; flex-wrap: wrap; padding-bottom: 28px; border-bottom: 1px solid rgba(245,240,230,.18); }
   footer .crest-mark { border-color: rgba(245,240,230,.5); color: var(--bg); }
   footer .f-brand { display: flex; align-items: center; gap: 14px; }
@@ -574,7 +574,8 @@
   @media (max-width: 860px) {
     :root { --pad: 22px; }
     body { font-size: 17px; }
-    .nav-links, .nav-cta, .nav-lang { display: none; }
+    .nav-links, .nav-lang { display: none; }
+    .nav-cta { display: none; }
     .menu-toggle { display: flex; }
     section { padding: 80px 0; }
     .intro { margin-bottom: 48px; }
