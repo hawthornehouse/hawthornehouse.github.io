@@ -14,9 +14,26 @@
 <title>Hawthorne House - Premium GCSE Tutoring in Dubai</title>
 <meta name="description" content="A founder-led teaching house in Dubai. British-trained teachers, chosen and overseen by us. One-to-one GCSE & iGCSE across all core subjects, at home or online.">
 <meta name="theme-color" content="#F4EFE4">
-<meta property="og:title" content="Hawthorne House — Founder-led GCSE teaching in Dubai">
-<meta property="og:description" content="British-trained teachers, chosen and overseen by the two founders. One-to-one, at home or online.">
+
+<!-- Favicon / icons -->
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+<link rel="icon" type="image/png" href="/icon-512.png">
+<link rel="apple-touch-icon" href="/icon-512.png">
+
+<!-- Open Graph / social share -->
+<meta property="og:title" content="Hawthorne House — Premium GCSE Tutoring in Dubai">
+<meta property="og:description" content="British-trained teachers, personally vetted and overseen by the two founders. One-to-one, at home or online.">
 <meta property="og:type" content="website">
+<meta property="og:site_name" content="Hawthorne House">
+<meta property="og:url" content="https://www.hawthornehouse.ae">
+<meta property="og:image" content="https://www.hawthornehouse.ae/og-image.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Hawthorne House — First-class teaching, personally overseen.">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Hawthorne House — Premium GCSE Tutoring in Dubai">
+<meta name="twitter:description" content="British-trained teachers, personally vetted and overseen by the two founders. One-to-one, at home or online.">
+<meta name="twitter:image" content="https://www.hawthornehouse.ae/og-image.png">
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -564,6 +581,26 @@
   .wa-float svg { width: 30px; height: 30px; }
   @keyframes waPop { from { opacity: 0; transform: scale(0.5); } to { opacity: 1; transform: scale(1); } }
 
+  /* ---------- FAQ ---------- */
+  .faq-list { max-width: 780px; margin: 0 auto; }
+  .faq-item { border-bottom: 1px solid var(--rule); }
+  .faq-item:first-child { border-top: 1px solid var(--rule); }
+  .faq-q {
+    width: 100%; background: none; border: none; cursor: pointer;
+    display: flex; align-items: center; justify-content: space-between; gap: 24px;
+    padding: 24px 6px; text-align: left;
+    font-family: 'Cormorant Garamond', serif; font-style: italic; font-weight: 600; font-size: 22px; color: var(--ink);
+    transition: color .2s var(--ease);
+  }
+  .faq-q:hover { color: var(--accent-deep); }
+  .faq-icon { position: relative; width: 22px; height: 22px; flex-shrink: 0; }
+  .faq-icon::before, .faq-icon::after { content: ""; position: absolute; background: var(--accent); }
+  .faq-icon::before { top: 50%; left: 0; right: 0; height: 1.5px; transform: translateY(-50%); }
+  .faq-icon::after { left: 50%; top: 0; bottom: 0; width: 1.5px; transform: translateX(-50%); transition: opacity .3s var(--ease), transform .3s var(--ease); }
+  .faq-item.open .faq-icon::after { opacity: 0; transform: translateX(-50%) rotate(90deg); }
+  .faq-a { max-height: 0; overflow: hidden; transition: max-height .4s var(--ease); }
+  .faq-a-inner { padding: 0 6px 26px; font-size: 16px; color: var(--ink-soft); line-height: 1.7; max-width: 66ch; }
+
   /* ---------- reveal ---------- */
   .reveal { opacity: 0; transform: translateY(24px); transition: opacity .8s var(--ease), transform .8s var(--ease); will-change: opacity, transform; }
   .reveal.in { opacity: 1; transform: none; }
@@ -630,7 +667,7 @@
       <li><a href="#teachers">Teachers</a></li>
       <li><a href="#pricing">Pricing</a></li>
       <li><a href="#founders">Founders</a></li>
-      <li><a href="#join">Teach With Us</a></li>
+      <li><a href="#faq">FAQ</a></li>
     </ul>
     <div class="nav-lang">
       <span class="lang-active">EN</span>
@@ -648,6 +685,7 @@
   <a href="#teachers">Teachers</a>
   <a href="#pricing">Pricing</a>
   <a href="#founders">Founders</a>
+  <a href="#faq">FAQ</a>
   <a href="#join">Teach With Us</a>
   <a href="#enquire" class="btn js-book">Book a consultation</a>
 </div>
@@ -867,6 +905,46 @@
   </div>
 </section>
 
+<!-- FAQ -->
+<section id="faq">
+  <div class="wrap">
+    <div class="intro reveal">
+      <span class="eyebrow">Questions</span>
+      <h2>Your questions, <em>answered</em>.</h2>
+    </div>
+    <div class="faq-list reveal">
+      <div class="faq-item">
+        <button class="faq-q" aria-expanded="false"><span>How does Hawthorne House actually work?</span><span class="faq-icon" aria-hidden="true"></span></button>
+        <div class="faq-a"><div class="faq-a-inner">After a free consultation, we propose one teacher chosen specifically for your child — in writing. Lessons run at home or online, and we stay close throughout: a same-day summary after every lesson, a monthly call with one of the founders, and an in-person review each term. You deal with us, not a roster of strangers.</div></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" aria-expanded="false"><span>How are your teachers vetted?</span><span class="faq-icon" aria-hidden="true"></span></button>
+        <div class="faq-a"><div class="faq-a-inner">Every teacher is British-trained and clears the same checks before they ever meet your child: qualifications verified, an interview with a founder, references taken up, a signed agreement with the House, and an MoHRE Private Teacher Permit. If they haven't cleared every stage, they're not on our roster.</div></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" aria-expanded="false"><span>Do you teach online or in person?</span><span class="faq-icon" aria-hidden="true"></span></button>
+        <div class="faq-a"><div class="faq-a-inner">Both. Lessons can take place in your home or online — whichever suits your family — and the experience and the price are the same either way.</div></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" aria-expanded="false"><span>Which year groups and subjects do you cover?</span><span class="faq-icon" aria-hidden="true"></span></button>
+        <div class="faq-a"><div class="faq-a-inner">GCSE and iGCSE for Years 10 and 11, with a Foundation programme for Year 9. We cover Maths, English and the Sciences alongside the wider curriculum, across the major British exam boards — Cambridge, Edexcel, AQA and OCR. We also offer AI Literacy as a core modern skill.</div></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" aria-expanded="false"><span>How is pricing decided?</span><span class="faq-icon" aria-hidden="true"></span></button>
+        <div class="faq-a"><div class="faq-a-inner">We don't publish a rate card, because no two families need the same thing. Pricing is shaped around your child's subjects, year group and the level of support, then set out plainly in a written proposal after your free consultation.</div></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" aria-expanded="false"><span>What if the teacher isn't the right fit?</span><span class="faq-icon" aria-hidden="true"></span></button>
+        <div class="faq-a"><div class="faq-a-inner">We stand behind every match. If the chemistry is wrong or your child's needs change, we'll introduce a replacement within seven days, at our cost, with continuity notes already in hand — so the work doesn't skip a beat.</div></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" aria-expanded="false"><span>How will I know my child is making progress?</span><span class="faq-icon" aria-hidden="true"></span></button>
+        <div class="faq-a"><div class="faq-a-inner">You'll never have to chase us. A written summary lands after every lesson, a founder reviews the work each week, you receive a monthly progress call, and we sit down with you in person at the end of each term to review what's happened and plan ahead.</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
 <!-- ENQUIRE -->
 <section class="enquire" id="enquire">
   <div class="wrap">
@@ -934,6 +1012,7 @@
         <a href="#teachers">Teachers</a>
         <a href="#pricing">Pricing</a>
         <a href="#founders">Founders</a>
+        <a href="#faq">FAQ</a>
         <a href="#join">Teach With Us</a>
         <a href="#enquire">Enquire</a>
       </nav>
@@ -953,6 +1032,21 @@
 <a id="waFloat" href="#" target="_blank" rel="noopener" class="wa-float" aria-label="Chat with us on WhatsApp">
   <svg viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.46 1.32 4.97L2 22l5.25-1.38a9.9 9.9 0 0 0 4.79 1.22h.004c5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.82 9.82 0 0 0 12.04 2Zm0 1.8c2.16 0 4.19.84 5.72 2.37a8.06 8.06 0 0 1 2.37 5.72c0 4.47-3.64 8.11-8.12 8.11a8.1 8.1 0 0 1-4.13-1.13l-.3-.18-3.12.82.83-3.04-.2-.31a8.05 8.05 0 0 1-1.24-4.29c.01-4.47 3.65-8.11 8.12-8.11Zm-2.6 4.2c-.2 0-.51.07-.78.37-.27.3-1.02.99-1.02 2.42 0 1.43 1.04 2.81 1.18 3 .15.2 2.05 3.13 5 4.39.7.3 1.24.48 1.67.62.7.22 1.34.19 1.84.12.56-.08 1.73-.71 1.97-1.39.24-.68.24-1.27.17-1.39-.07-.12-.27-.2-.56-.34-.3-.15-1.74-.86-2.01-.96-.27-.1-.47-.15-.66.15-.2.3-.76.95-.93 1.15-.17.2-.34.22-.64.07-.3-.15-1.25-.46-2.39-1.47-.88-.79-1.48-1.76-1.65-2.06-.17-.3-.02-.46.13-.61.13-.13.3-.34.45-.51.15-.17.2-.3.3-.5.1-.2.05-.37-.02-.52-.07-.15-.66-1.6-.92-2.18-.24-.58-.49-.5-.66-.51Z"/></svg>
 </a>
+
+<!-- FAQ accordion -->
+<script>
+(function(){
+  document.querySelectorAll('.faq-q').forEach(function(btn){
+    btn.addEventListener('click', function(){
+      var item = btn.closest('.faq-item');
+      var ans = item.querySelector('.faq-a');
+      var open = item.classList.toggle('open');
+      btn.setAttribute('aria-expanded', open ? 'true' : 'false');
+      ans.style.maxHeight = open ? ans.scrollHeight + 'px' : '0px';
+    });
+  });
+})();
+</script>
 
 <!-- Calendly script -->
 <script src="https://assets.calendly.com/assets/external/widget.js"></script>
