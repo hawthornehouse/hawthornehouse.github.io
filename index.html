@@ -42,6 +42,44 @@
 <!-- Calendly -->
 <link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet">
 
+<!-- Structured data (SEO) -->
+<script type="application/ld+json">
+{ "@context": "https://schema.org", "@graph": [
+  {
+    "@type": ["EducationalOrganization", "LocalBusiness"],
+    "@id": "https://www.hawthornehouse.ae/#org",
+    "name": "Hawthorne House",
+    "url": "https://www.hawthornehouse.ae",
+    "logo": "https://www.hawthornehouse.ae/icon-512.png",
+    "image": "https://www.hawthornehouse.ae/og-image.png",
+    "description": "Founder-led GCSE and iGCSE tutoring in Dubai. British-trained teachers, personally vetted and overseen by the two founders. One-to-one, at home or online.",
+    "email": "info@hawthornehouse.com",
+    "areaServed": { "@type": "Place", "name": "Dubai, United Arab Emirates" },
+    "address": { "@type": "PostalAddress", "addressLocality": "Dubai", "addressCountry": "AE" },
+    "knowsAbout": ["GCSE", "iGCSE", "Mathematics", "English", "Biology", "Chemistry", "Physics", "AI Literacy"],
+    "founder": [ { "@type": "Person", "name": "Bilal" }, { "@type": "Person", "name": "Nayyab" } ]
+  },
+  {
+    "@type": "WebSite",
+    "@id": "https://www.hawthornehouse.ae/#website",
+    "url": "https://www.hawthornehouse.ae",
+    "name": "Hawthorne House",
+    "publisher": { "@id": "https://www.hawthornehouse.ae/#org" }
+  }
+]}
+</script>
+<script type="application/ld+json">
+{ "@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [
+  { "@type": "Question", "name": "How does Hawthorne House actually work?", "acceptedAnswer": { "@type": "Answer", "text": "After a free consultation, we propose one teacher chosen specifically for your child — in writing. Lessons run at home or online, and we stay close throughout: a same-day summary after every lesson, a monthly call with one of the founders, and an in-person review each term. You deal with us, not a roster of strangers." } },
+  { "@type": "Question", "name": "How are your teachers vetted?", "acceptedAnswer": { "@type": "Answer", "text": "Every teacher is British-trained and clears the same checks before they ever meet your child: qualifications verified, an interview with a founder, references taken up, a signed agreement with the House, and an MoHRE Private Teacher Permit. If they haven't cleared every stage, they're not on our roster." } },
+  { "@type": "Question", "name": "Do you teach online or in person?", "acceptedAnswer": { "@type": "Answer", "text": "Both. Lessons can take place in your home or online — whichever suits your family — and the experience and the price are the same either way." } },
+  { "@type": "Question", "name": "Which year groups and subjects do you cover?", "acceptedAnswer": { "@type": "Answer", "text": "GCSE and iGCSE for Years 10 and 11, with a Foundation programme for Year 9. We cover Maths, English and the Sciences alongside the wider curriculum, across the major British exam boards — Cambridge, Edexcel, AQA and OCR. We also offer AI Literacy as a core modern skill." } },
+  { "@type": "Question", "name": "How is pricing decided?", "acceptedAnswer": { "@type": "Answer", "text": "We don't publish a rate card, because no two families need the same thing. Pricing is shaped around your child's subjects, year group and the level of support, then set out plainly in a written proposal after your free consultation." } },
+  { "@type": "Question", "name": "What if the teacher isn't the right fit?", "acceptedAnswer": { "@type": "Answer", "text": "We stand behind every match. If the chemistry is wrong or your child's needs change, we'll introduce a replacement within seven days, at our cost, with continuity notes already in hand — so the work doesn't skip a beat." } },
+  { "@type": "Question", "name": "How will I know my child is making progress?", "acceptedAnswer": { "@type": "Answer", "text": "You'll never have to chase us. A written summary lands after every lesson, a founder reviews the work each week, you receive a monthly progress call, and we sit down with you in person at the end of each term to review what's happened and plan ahead." } }
+]}
+</script>
+
 <style>
   :root {
     --bg: #F4EFE4;
