@@ -27,6 +27,7 @@
 <meta property="og:description" content="British-trained teachers, personally vetted and overseen by the two founders. One-to-one, at home or online.">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Hawthorne House">
+<meta property="og:locale" content="en_GB">
 <meta property="og:url" content="https://www.hawthornehouse.ae">
 <meta property="og:image" content="https://www.hawthornehouse.ae/og-image.png">
 <meta property="og:image:width" content="1200">
@@ -39,6 +40,7 @@
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preconnect" href="https://assets.calendly.com">
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 
 <!-- Calendly -->
@@ -79,6 +81,13 @@
   { "@type": "Question", "name": "How is pricing decided?", "acceptedAnswer": { "@type": "Answer", "text": "We don't publish a rate card, because no two families need the same thing. Pricing is shaped around your child's subjects, year group and the level of support, then set out plainly in a written proposal after your free consultation." } },
   { "@type": "Question", "name": "What if the teacher isn't the right fit?", "acceptedAnswer": { "@type": "Answer", "text": "We stand behind every match. If the chemistry is wrong or your child's needs change, we'll introduce a replacement within seven days, at our cost, with continuity notes already in hand — so the work doesn't skip a beat." } },
   { "@type": "Question", "name": "How will I know my child is making progress?", "acceptedAnswer": { "@type": "Answer", "text": "You'll never have to chase us. A written summary lands after every lesson, a founder reviews the work each week, you receive a monthly progress call, and we sit down with you in person at the end of each term to review what's happened and plan ahead." } }
+]}
+</script>
+<script type="application/ld+json">
+{ "@context": "https://schema.org", "@type": "ItemList", "itemListElement": [
+  { "@type": "Course", "name": "GCSE and iGCSE Tutoring", "description": "One-to-one GCSE and iGCSE tutoring for Years 10 and 11 across Maths, English, the Sciences and the wider curriculum, with British-trained teachers and founder oversight.", "provider": { "@type": "EducationalOrganization", "name": "Hawthorne House", "sameAs": "https://www.hawthornehouse.ae" } },
+  { "@type": "Course", "name": "GCSE Foundation", "description": "Foundation tutoring for Year 9 students — building study habits and closing gaps before the GCSE years begin.", "provider": { "@type": "EducationalOrganization", "name": "Hawthorne House", "sameAs": "https://www.hawthornehouse.ae" } },
+  { "@type": "Course", "name": "AI Literacy", "description": "Helping students understand and use AI tools responsibly and effectively — a core modern skill alongside the curriculum.", "provider": { "@type": "EducationalOrganization", "name": "Hawthorne House", "sameAs": "https://www.hawthornehouse.ae" } }
 ]}
 </script>
 
@@ -1177,14 +1186,27 @@ const CONFIG = {
     });
   });
 
-  // inline embed in the enquire section
+  // inline embed — loaded lazily only when the booking section nears the viewport
   const inline = document.getElementById("calendlyInline");
   if (!inline) return;
-  if (hasCalendly) {
-    window.Calendly.initInlineWidget({ url: CONFIG.calendly, parentElement: inline });
-  } else {
+  if (!CONFIG.calendly || !window.Calendly) {
     inline.style.height = "auto";
     inline.innerHTML = '<div class="calendly-fallback">Your Calendly booking calendar will appear here once your link is added to the config. In the meantime, reach us on WhatsApp or by email above.</div>';
+    return;
+  }
+  var inlineLoaded = false;
+  function loadInline() {
+    if (inlineLoaded) return;
+    inlineLoaded = true;
+    window.Calendly.initInlineWidget({ url: CONFIG.calendly, parentElement: inline });
+  }
+  if ("IntersectionObserver" in window) {
+    var io = new IntersectionObserver(function (entries) {
+      entries.forEach(function (e) { if (e.isIntersecting) { loadInline(); io.disconnect(); } });
+    }, { rootMargin: "500px" });
+    io.observe(inline);
+  } else {
+    loadInline();
   }
 })();
 </script>
